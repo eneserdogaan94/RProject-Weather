@@ -1,0 +1,15 @@
+install.packages("RWeka")
+install.packages("partykit")
+library("RWeka")
+library("partykit")
+data("WeatherPlay")
+res<-J48 (play ~ .,data = WeatherPlay)
+summary(res)
+if(require("partykit",quietly = TRUE)) plot(res)
+##2.Örneklem
+data("iris")
+res<-J48(Species ~ .,data = iris)
+summary(res)
+if(require("partykit",quietly = TRUE)) plot(res)
+
+
